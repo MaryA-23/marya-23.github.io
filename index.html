@@ -1,514 +1,2218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="styles/styles.css">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Mary Magdalene Ayivor — Backend Developer with experience in database systems, backend development, system support and server administration."
+  >
+
+  <title>Mary Ayivor | Backend & Database Systems</title>
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="./src/output.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  >
+
+  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 </head>
-<body class="main-content">
-  <header class="section sec1 header active" id="home">
-    <div class="header-content">
-      <div class="left-header">
-        <div class="h-shape"></div>
-          <div class="image">
-            <img src="img/marybrown.jpg" alt="">
-          </div>
-      </div>
-      <div class="right-header">
-        <h1 class="name">
-          Hi, I'm <span>Mary Magdalene Ayivor.</span >
-          A Back-End Developer
-        </h1>
-        <p>
-          I'm a dedicated Software Developer with a passion for creating beautiful,
-          responsive, and user-friendly websites.
-          I enjoy turning ideas into digital experiences that not only look great but work seamlessly. 
-          In my spare time, I love playing games and exploring new cuisines because food keeps my creativity alive!
-                  </p>
-        <div class="btn-con">
-          <a href="cv/MARY AYIVOR.pdf" class="main-btn">
-            <span class="btn-text">Download Cv</span>
-            <span class="btn-icon"> <i class="fas fa-download"> </i></span>
-          </a>
+
+
+<body class="bg-[#f8faff] font-sans text-slate-900 antialiased">
+
+
+  <!-- =========================================================
+       NAVBAR
+  ========================================================== -->
+  <header
+    id="navbar"
+    class="fixed left-0 top-0 z-50 w-full border-b border-slate-200/70 bg-white/90 backdrop-blur-xl"
+  >
+
+    <nav
+      class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-8"
+    >
+
+      <!-- Logo -->
+      <a href="#home" class="flex items-center gap-3">
+
+        <div
+          class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-emerald-500 text-lg font-extrabold text-white shadow-lg shadow-cyan-500/20"
+        >
+          MA
         </div>
+
+        <div>
+          <p class="font-bold text-slate-950">
+            Mary Ayivor
+          </p>
+
+          <p class="hidden text-xs text-slate-500 sm:block">
+            Backend & Database Systems
+          </p>
+        </div>
+
+      </a>
+
+
+      <!-- Desktop Navigation -->
+      <div class="hidden items-center gap-7 lg:flex">
+
+        <a
+          href="#home"
+          class="nav-link text-sm font-semibold text-blue-600"
+        >
+          Home
+        </a>
+
+        <a
+          href="#about"
+          class="nav-link text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+        >
+          About
+        </a>
+
+        <a
+          href="#projects"
+          class="nav-link text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+        >
+          Projects
+        </a>
+
+        <a
+          href="#skills"
+          class="nav-link text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+        >
+          Skills
+        </a>
+
+        <a
+          href="#experience"
+          class="nav-link text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+        >
+          Experience
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-link text-sm font-semibold text-slate-600 transition hover:text-blue-600"
+        >
+          Contact
+        </a>
+
       </div>
+
+
+      <!-- Download CV -->
+      <a
+        href="cv/marymagdaleneayivor C.V.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-600 md:inline-flex"
+      >
+        <i class="fas fa-download"></i>
+        Download CV
+      </a>
+
+
+      <!-- Mobile Menu Button -->
+      <button
+      id="menu-btn"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-900 lg:hidden"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    </nav>
+
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden border-t border-slate-200 bg-white px-6 py-6 lg:hidden"
+    >
+
+      <div class="flex flex-col gap-5">
+
+        <a href="#home" class="mobile-link font-medium">
+          Home
+        </a>
+
+        <a href="#about" class="mobile-link font-medium">
+          About
+        </a>
+
+        <a href="#projects" class="mobile-link font-medium">
+          Projects
+        </a>
+
+        <a href="#skills" class="mobile-link font-medium">
+          Skills
+        </a>
+
+        <a href="#experience" class="mobile-link font-medium">
+          Experience
+        </a>
+
+        <a href="#contact" class="mobile-link font-medium">
+          Contact
+        </a>
+
+        <a
+          href="cv/Mary-Magdalene-Ayivor-CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-3 font-semibold text-white"
+        >
+          <i class="fas fa-download"></i>
+          Download CV
+        </a>
+
+      </div>
+
     </div>
+
   </header>
+
+
+
   <main>
-    <section class="section sec2 about" id="about">
-     <div class="main-title">
-        <h2>About <span>Me</span><span class="bg-text">My Stats</span></h2>
-      </div>
-          <div class="about-container">
-            <div class="left-about">
-              <h4>Information About Me</h4>
-              <p>
-            Friendly, honest, and passionate about what I do, I love working both independently and with a team to bring ideas to life. 
-            I’m goal-oriented and enjoy solving problems through creativity and clear communication. 
-            With a mix of organization and curiosity, I take on every challenge with focus and enthusiasm, always aiming to deliver my best work.
-            <br><br>
-            When I’m not coding or brainstorming new ideas, you’ll probably find me listening to music, playing games, or exploring something new to keep my mind active and inspired.
-              </p> 
-              <div class="btn-con">
-                <a href="cv/MARY AYIVOR.pdf" class="main-btn">
-                  <span class="btn-text">Download Cv</span>
-                  <span class="btn-icon"> <i class="fas fa-download"> </i></span>
-                </a>
-              </div>
-            </div>
-            <div class="right-about">
-              <div class="about-item">
-                <div class="abt-text">
-                  <p class="large-text">6+</p>
-                  <p class="small-text">Projects<br />Completed</p>
-                </div>
-              </div>
-              <div class="about-item">
-                <div class="abt-text">
-                  <p class="large-text">3+</p>
-                  <p class="small-text">Years<br />Experience</p>
-                </div>
-              </div>
-              <div class="about-item">
-                <div class="abt-text">
-                  <p class="large-text">3+</p>
-                  <p class="small-text">Happy<br />Clients</p>
-                </div>
-              </div>
-              <div class="about-item">
-                <div class="abt-text">
-                  <p class="large-text">10+</p>
-                  <p class="small-text">Customer<br />Review</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="about-stats">
-            <h4 class="stat-title">My Skills</h4>
-            <div class="progress-bars">
-              <div class="progress-bar">
-                <p class="prog-title">SQL</p>
-                <div class="progress-con">
-                  <p class="prog-text">60%</p>
-                      <div class="progress">
-                        <span class="Sql"></span>
-                      </div>
-                </div>
-              </div>
-              <div class="progress-bar">
-                <p class="prog-title">php</p>
-                <div class="progress-con">
-                  <p class="prog-text">50%</p>
-                      <div class="progress">
-                        <span class="php"></span>
-                      </div>
-                </div>
-              </div>
-              <div class="progress-bar">
-                <p class="prog-title"> Flutter </p>
-                <div class="progress-con">
-                  <p class="prog-text">50%</p>
-                      <div class="progress">
-                        <span class="Flutter"></span>
-                      </div>
-                </div>
-              </div>
-              <div class="progress-bar">
-                <p class="prog-title">Laravel</p>
-                <div class="progress-con">
-                  <p class="prog-text">90%</p>
-                      <div class="progress">
-                        <span class="Laravel"></span>
-                      </div>
-                </div>
-              </div>
-              <div class="progress-bar">
-                <p class="prog-title">Angularjs</p>
-                <div class="progress-con">
-                  <p class="prog-text">70%</p>
-                      <div class="progress">
-                        <span class="Angularjs"></span>
-                      </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h4 class="stat-title">My Timeline</h4>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="tl-icon">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <p class="tl-duration"> 2015 - 2018</p>
-              <h5>Accra Girls' <span>Senior High</span></h5>
-              <p>
-                West African Senior School Certificate Examination (WASSCE).
-              </p>
-            </div>
-            <div class="timeline-item">
-              <div class="tl-icon">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <p class="tl-duration"> 2020 - 2023</p>
-              <h5>Ho Technical <span>University</span></h5>
-              <p>
-                Higher National Diploma in Information Technology.
-              </p>
-            </div>
-           <div class="timeline-item">
-            <div class="tl-icon">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <p class="tl-duration"> 2023 - 2025</p>
-              <h5>Ghana Communication Technology <span>University</span></h5>
-              <p>
-               Bachelor of Science in Information Technology.
-              </p>
-            </div> 
-            <div class="timeline-item">
-              <div class="tl-icon">
-                <i class="fas fa-briefcase"></i>
-              </div>
-              <p class="tl-duration"> 2023 - Present</p>
-              <h5>Toldo IT <span> Limited </span></h5>
-              <p>
-               Toldo Ltd is a Ghana-based technology firm that focuses on software development, web applications, IT consulting, and digital management solutions.
-                With a skilled and dedicated team, the company delivers secure, scalable, and efficient systems that help businesses in sectors such as healthcare and enterprise automation operate smarter and grow faster.
-              </p>
-            </div>
-          </div>
-    </section>
-    <section class="section sec3 portfolio" id="portfolio">
-      <div class="main-title">
-        <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
-      </div>
-      <p class="port-text">
-        Here are some of my works I've done in the various programming languages!
-      </p>
-      <div class="portfolios">
-        <div class="portfolio-item">
-          <div class="image">
-            <img src="img/portfolio5.jpg" alt="">
-          </div>
-          <div class="hover-item">
-            <h3>Project Source</h3>
-            <div class="icons">
-              <a href="https://github.com/MaryA-23" class="icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://web.facebook.com/profile.php?id=100026678633744" class="icon">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/kekeli_7/" class="icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="image">
-            <img src="img/portfolio2.jpg" alt="">
-          </div>
-          <div class="hover-item">
-            <h3>Project Source</h3>
-            <div class="icons">
-              <a href="https://github.com/MaryA-23" class="icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://web.facebook.com/profile.php?id=100026678633744" class="icon">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/kekeli_7/" class="icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="image">
-            <img src="img/porfolio3.jpg" alt="">
-          </div>
-          <div class="hover-item">
-            <h3>Project Source</h3>
-            <div class="icons">
-              <a href="https://github.com/MaryA-23" class="icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://web.facebook.com/profile.php?id=100026678633744" class="icon">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/kekeli_7/" class="icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="image">
-            <img src="img/portfolio4.jpg" alt="">
-          </div>
-          <div class="hover-item">
-            <h3>Project Source</h3>
-            <div class="icons">
-              <a href="https://github.com/MaryA-23" class="icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://web.facebook.com/profile.php?id=100026678633744" class="icon">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/kekeli_7/" class="icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="image">
-            <img src="img/portfolio6.jpg" alt="">
-          </div>
-          <div class="hover-item">
-            <h3>Project Source</h3>
-            <div class="icons">
-              <a href="https://github.com/MaryA-23" class="icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://web.facebook.com/profile.php?id=100026678633744" class="icon">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/kekeli_7/" class="icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="portfolio-item">
-          <div class="image">
-            <img src="img/portfolio1.jpg" alt="">
-          </div>
-          <div class="hover-item">
-            <h3>Project Source</h3>
-            <div class="icons">
-              <a href="https://github.com/MaryA-23" class="icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://web.facebook.com/profile.php?id=100026678633744" class="icon">
-                <i class="fab fa-facebook"></i>
-              </a>
-              <a href="https://www.instagram.com/kekeli_7/" class="icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section sec4 blog" id="blogs">
-      <div class="blogs-content">
-        <div class="main-title">
-          <h2>My <span>Blogs</span><span class="bg-text">My Blogs</span></h2>
-        </div>
-        <div class="blogs">
-          <div class="blog">
-            <img src="img/blog1.jpg" alt="">
-            <div class="blog-text">
-              <h4>
-                  How to Create Your Own Website
-              </h4>
-              <p>
-                Perfection in design is achieved not by adding extra elements,
-                 but by refining until only the essentials remain.
-              </p>
-            </div>
-          </div>
-          <div class="blog">
-            <img src="img/blog2.jpg" alt="">
-            <div class="blog-text">
-              <h4>
-                  How To Get Familiar With Angularjs
-              </h4>
-              <p>
-               An Angular developer achieves mastery not by adding endless features, 
-                 but by building clean, efficient, and reusable components.
-              </p>
-            </div>
-          </div>
-          <div class="blog">
-            <img src="img/blog3.jpg" alt="">
-            <div class="blog-text">
-              <h4>
-                  How To Get Familiar With Laravel 
-              </h4>
-              <p>
-                Simplicity is the ultimate skill in Laravel; when your code reads like a story, you’ve learned the framework well.
-              </p>
-            </div>
-          </div>
-          <div class="blog">
-            <img src="img/blog4.jpg" alt="">
-            <div class="blog-text">
-              <h4>
-                 How To Make Samba Installation and To give How To give permissions in Kali
-              </h4>
-              <p> Installing and configuring Samba on Kali Linux allows seamless file sharing between Linux and Windows systems. 
-                Remember, a well-secured Samba setup is not about granting all access, it’s about sharing only what’s necessary and protecting what’s important.
-               </p> 
-               <blockquote> “Perfect Samba setup isn’t when you’ve shared everything, but when you’ve shared exactly what’s needed securely and efficiently.” </blockquote>
-            </div>
-          </div>
-          <div class="blog">
-            <img src="img/blog5.jpg" alt="">
-            <div class="blog-text">
-              <h4>
-                    Mastering SQL Excellence
-              </h4>
-              <p>
-                A True expertise in SQL isn’t about writing complex queries, 
-                 but crafting ones so clear and efficient that nothing more or less—is needed.
-                 <br>
-                  <blockquote>
-                  SELECT wisdom 
-                  FROM experience 
-                  WHERE code = 'simple' 
-                  AND performance = 'optimized';
-                  </blockquote>
-              </p>
-            </div>
-          </div>
-          <div class="blog">
-            <img src="img/blog6.jpg" alt="">
-            <div class="blog-text">
-              <h4>
-                How To Become an Expert in Software Development
-              </h4>
-              <p>
-                A true developer knows mastery is achieved not when there’s nothing left to code,
-                but when there’s nothing left to simplify.
-              </p>
 
-            </div>
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+    <section
+      id="home"
+      class="relative overflow-hidden pt-32 sm:pt-36"
+    >
+
+      <!-- Background -->
+      <div
+        class="absolute -left-36 top-32 h-96 w-96 rounded-full bg-blue-200/40 blur-3xl"
+      ></div>
+
+      <div
+        class="absolute right-0 top-20 h-96 w-96 rounded-full bg-cyan-200/40 blur-3xl"
+      ></div>
+
+
+      <div
+        class="relative mx-auto grid min-h-[680px] max-w-7xl items-center gap-14 px-5 pb-20 sm:px-6 lg:grid-cols-2 lg:px-8"
+      >
+
+        <!-- Hero Content -->
+        <div>
+
+          <div
+            class="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-blue-600"
+          >
+            <i class="fas fa-terminal"></i>
+
+            Backend • Databases • Systems • Security
           </div>
+
+
+          <h1
+            class="max-w-3xl text-5xl font-extrabold leading-[1.04] tracking-[-0.04em] text-slate-950 sm:text-6xl lg:text-7xl"
+          >
+            Building Reliable
+
+            <span
+              class="block bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent"
+            >
+              Digital Systems
+            </span>
+          </h1>
+
+
+          <p
+            class="mt-7 max-w-xl text-lg leading-8 text-slate-600"
+          >
+            I'm Mary Magdalene Ayivor, a backend developer with experience
+            working with databases, APIs, system support and server
+            deployment. I'm particularly interested in database
+            administration, server administration and information security.
+          </p>
+
+
+          <!-- Availability -->
+          <div class="mt-6 flex items-center gap-3">
+
+            <span class="relative flex h-3 w-3">
+
+              <span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+              ></span>
+
+              <span
+                class="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"
+              ></span>
+
+            </span>
+
+            <span class="text-sm font-semibold text-slate-600">
+              Available for opportunities
+            </span>
+
+          </div>
+
+
+          <!-- Buttons -->
+          <div class="mt-9 flex flex-wrap gap-4">
+
+            <a
+              href="#projects"
+              class="inline-flex items-center gap-3 rounded-full bg-slate-950 px-7 py-4 font-semibold text-white shadow-xl shadow-slate-900/10 transition hover:-translate-y-1 hover:bg-blue-600"
+            >
+              View My Work
+              <i class="fas fa-arrow-right text-sm"></i>
+            </a>
+
+
+            <a
+              href="cv/Mary-Magdalene-Ayivor-CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-3 rounded-full border border-slate-300 bg-white px-7 py-4 font-semibold text-slate-800 transition hover:-translate-y-1 hover:border-blue-400 hover:text-blue-600"
+            >
+              <i class="fas fa-file-alt"></i>
+              View CV
+            </a>
+
+          </div>
+
+
+          <!-- Social -->
+          <div class="mt-8 flex gap-3">
+
+            <a
+              href="https://github.com/MaryA-23"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="social-button hover:bg-slate-950"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+
+
+            <a
+              href="https://linkedin.com/in/marymagdaleneayivor"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="social-button hover:bg-blue-600"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+
+
+            <a
+              href="https://twitter.com/ayivorm_mary"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+              class="social-button hover:bg-sky-500"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+
+
+            <a
+              href="https://www.instagram.com/kekeli_7/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="social-button hover:bg-pink-500"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+
+          </div>
+
         </div>
-      </div>
-    </section>
-    <section class="section sec5 contact" id="contact">
-      <div class="contact-container">
-        <div class="main-title">
-          <h2>Contact <span>Me</span><span class="bg-text">My Blogs</span></h2>
-        </div>
-        <div class="contact-content-con">
-          <div class="left-contact">
-            <h4>Contact Me Here </h4>
-            <p>
-              Dream stompers are people who want to stomp on your hopes and dreams. 
-              Lose their phone numbers
+
+
+
+        <!-- Hero Image -->
+        <div
+          class="relative mx-auto w-full max-w-[520px] lg:ml-auto"
+        >
+
+          <div
+            class="absolute -left-8 top-16 h-72 w-72 rotate-12 rounded-[4rem] bg-gradient-to-br from-blue-500 to-indigo-500"
+          ></div>
+
+          <div
+            class="absolute -right-8 bottom-10 h-72 w-72 -rotate-12 rounded-[4rem] bg-gradient-to-br from-cyan-300 to-emerald-300"
+          ></div>
+
+
+          <div
+            class="relative overflow-hidden rounded-[4rem] bg-white p-2 shadow-2xl shadow-blue-900/15"
+          >
+
+            <img
+              src="img/marybrown.jpg"
+              alt="Mary Magdalene Ayivor"
+              class="h-[480px] w-full rounded-[3.5rem] object-cover object-top sm:h-[540px]"
+            >
+
+          </div>
+
+
+          <!-- Experience Badge -->
+          <div
+            class="absolute -right-1 top-1/2 rounded-2xl border border-white/70 bg-white/95 p-5 shadow-xl backdrop-blur sm:-right-4 md:-right-10"
+          >
+
+            <p class="text-3xl font-extrabold text-cyan-500">
+              3+
             </p>
-            <div class="contact-info">
-                <div class="contact-items">
-                  <div class="icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                      <span> location: </span>
-                  </div>
-                  <p>
-                     <span>  Greater Accra, Ghana </span> 
-                  </p>
-                </div>
-                <div class="contact-items">
-                  <div class="icon">
-                    <i class="fas fa-user-graduate"></i>
-                    <span> Phone Number:</span>
-                  </div>
-                  <p>
-                     <span> 0541033727 </span>
-                  </p>
-                </div>
-                <div class="contact-items">
-                  <div class="icon">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email: </span>
-                  </div>
-                  <p>
-                      <span> ayivorm@gmail.com </span>
-                  </p>
-                </div>
-                <div class="contact-items">
-                  <div class="icon">
-                    <i class="fas fa-globe-africa"></i>
-                      <span> languages: </span>
-                  </div>
-                  <p>
-                      <span>  English</span>
-                  </p>
-                </div>
+
+            <p class="mt-1 text-sm font-semibold text-slate-900">
+              Years in
+              <br>
+              IT
+            </p>
+
+          </div>
+
+
+          <!-- Floating Card -->
+          <div
+            class="absolute -bottom-8 left-2 max-w-[250px] rounded-2xl bg-slate-950 p-5 text-white shadow-xl sm:-left-5 md:-left-12"
+          >
+
+            <div class="flex items-center gap-3">
+
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-400"
+              >
+                <i class="fas fa-database"></i>
+              </div>
+
+              <p class="text-sm leading-6 text-slate-300">
+                Backend systems, databases and reliable infrastructure.
+              </p>
+
             </div>
-                <div class="contact-icons">
-                  <div class="contact-icon">
-                    <a href="https://web.facebook.com/profile.php?id=100026678633744" target="_blank">
-                      <i class="fab fa-facebook"></i>
-                    </a>
-                    <a href="https://www.instagram.com/kekeli_7/" target="_blank">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://twitter.com/ayivorm_mary" target="_blank">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </div>
-                </div>
+
           </div>
-          <div class="right-contact">
-                <form action="" class="contact-form">
-                  <div class="input-control  i-c-2 ">
-                      <input type="text" required placeholder="Your Name">
-                      <input type="email" required placeholder="Your Email">
-                  </div>
-                  <div class="input-control">
-                    <input type="text" required placeholder="Enter Subject">
-                </div>
-                <div class="input-control">
-                  <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
-              </div>
-              <div class="submit-btn">
-                <a href="cv/MARY AYIVOR.pdf" class="main-btn">
-                  <span class="btn-text">Download Cv</span>
-                  <span class="btn-icon"> <i class="fas fa-download"> </i></span>
-                </a>
-              </div>
-                </form>
-          </div>
+
         </div>
+
       </div>
 
- 
+
+
+      <!-- Focus Bar -->
+      <div
+        class="relative mx-auto max-w-7xl px-5 pb-16 sm:px-6 lg:px-8"
+      >
+
+        <div
+          class="grid overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-200/60 sm:grid-cols-2 lg:grid-cols-4"
+        >
+
+          <div class="feature-item">
+
+            <div class="feature-icon bg-blue-50 text-blue-600">
+              <i class="fas fa-code"></i>
+            </div>
+
+            <div>
+              <p class="font-bold">Backend Systems</p>
+              <p class="text-sm text-slate-500">
+                Laravel & REST APIs
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="feature-item">
+
+            <div class="feature-icon bg-violet-50 text-violet-600">
+              <i class="fas fa-database"></i>
+            </div>
+
+            <div>
+              <p class="font-bold">Databases</p>
+              <p class="text-sm text-slate-500">
+                SQL & data systems
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="feature-item">
+
+            <div class="feature-icon bg-emerald-50 text-emerald-600">
+              <i class="fas fa-server"></i>
+            </div>
+
+            <div>
+              <p class="font-bold">Administration</p>
+              <p class="text-sm text-slate-500">
+                Linux & systems
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="feature-item">
+
+            <div class="feature-icon bg-cyan-50 text-cyan-600">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+
+            <div>
+              <p class="font-bold">Security</p>
+              <p class="text-sm text-slate-500">
+                Secure infrastructure
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
+
+
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================== -->
+    <section id="about" class="py-24">
+
+      <div
+        class="mx-auto grid max-w-7xl gap-14 px-5 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8"
+      >
+
+        <!-- About Content -->
+        <div>
+
+          <p class="section-label">
+            About Me
+          </p>
+
+
+          <h2
+            class="max-w-3xl text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl"
+          >
+            Development Is My Foundation.
+
+            <span class="text-emerald-500">
+              Systems Are My Direction.
+            </span>
+          </h2>
+
+
+          <p
+            class="mt-6 max-w-2xl text-lg leading-8 text-slate-600"
+          >
+            I'm an IT professional with practical experience in database
+            management, backend systems, system support and application
+            deployment.
+          </p>
+
+
+          <p
+            class="mt-4 max-w-2xl leading-8 text-slate-600"
+          >
+            My current work involves supporting MySQL databases,
+            developing and maintaining backend APIs, working with
+            application data and helping maintain reliable systems.
+          </p>
+
+
+          <p
+            class="mt-4 max-w-2xl leading-8 text-slate-600"
+          >
+            I'm particularly interested in database administration,
+            server administration and information security. I want to
+            continue building deeper technical knowledge in these areas
+            while strengthening my backend development experience.
+          </p>
+
+        </div>
+
+
+        <!-- About Cards -->
+        <div class="grid gap-4 sm:grid-cols-2">
+
+          <div class="about-card">
+
+            <i class="fas fa-database text-xl text-violet-500"></i>
+
+            <h3 class="mt-4 font-bold">
+              Database Systems
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Database management, SQL and data-driven applications.
+            </p>
+
+          </div>
+
+
+          <div class="about-card">
+
+            <i class="fas fa-code text-xl text-blue-500"></i>
+
+            <h3 class="mt-4 font-bold">
+              Backend Development
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Laravel, PHP, APIs and application logic.
+            </p>
+
+          </div>
+
+
+          <div class="about-card">
+
+            <i class="fas fa-server text-xl text-emerald-500"></i>
+
+            <h3 class="mt-4 font-bold">
+              System Administration
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Linux, deployment and system administration.
+            </p>
+
+          </div>
+
+
+          <div class="about-card">
+
+            <i class="fas fa-shield-alt text-xl text-cyan-500"></i>
+
+            <h3 class="mt-4 font-bold">
+              Information Security
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Access control, data privacy and secure systems.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         PROJECTS
+    ========================================================== -->
+    <section
+      id="projects"
+      class="border-y border-slate-200 bg-white py-24"
+    >
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+
+        <!-- Project Heading -->
+        <div
+          class="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end"
+        >
+
+          <div>
+
+            <p class="section-label">
+              Selected Work
+            </p>
+
+
+            <h2
+              class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl"
+            >
+              Projects & Systems
+            </h2>
+
+
+            <p class="mt-4 max-w-2xl leading-7 text-slate-600">
+              Personal development work and professional systems I have
+              contributed to during my technical journey.
+            </p>
+
+          </div>
+
+
+          <a
+            href="https://github.com/MaryA-23"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 font-semibold text-slate-700 transition hover:text-blue-600"
+          >
+            GitHub Profile
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+
+
+        <div class="grid gap-7 lg:grid-cols-3">
+
+
+       <!-- =====================================================
+                GREENHAVEN
+            ====================================================== -->
+            <article class="project-card">
+
+              <!-- PROJECT VISUAL -->
+              <div
+                class="relative flex h-60 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-700"
+              >
+
+                <!-- Background Glow -->
+                <div
+                  class="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-emerald-300/20 blur-3xl"
+                ></div>
+
+                <div
+                  class="absolute -bottom-20 -left-10 h-52 w-52 rounded-full bg-teal-400/20 blur-3xl"
+                ></div>
+
+
+                <!-- Main Icon -->
+                <div
+                  class="relative flex h-28 w-28 items-center justify-center rounded-3xl border border-white/10 bg-white/10 text-5xl text-emerald-300 shadow-2xl backdrop-blur"
+                >
+                  <i class="fas fa-leaf"></i>
+                </div>
+
+
+                <!-- Project Type -->
+                <div
+                  class="absolute left-4 top-4 rounded-full bg-emerald-500 px-4 py-2 text-xs font-bold text-white shadow-lg"
+                >
+                  Personal Project
+                </div>
+
+              </div>
+
+
+              <!-- PROJECT CONTENT -->
+              <div class="flex flex-1 flex-col px-3 pb-4 pt-6">
+
+                <!-- Title -->
+                <div class="flex items-center justify-between gap-4">
+
+                  <h3 class="text-2xl font-bold text-slate-950">
+                    GreenHaven
+                  </h3>
+
+
+                  <div
+                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"
+                  >
+                    <i class="fas fa-seedling"></i>
+                  </div>
+
+                </div>
+
+
+                <!-- Description -->
+                <p class="mt-3 leading-7 text-slate-600">
+                  A multi-tenant farming marketplace designed to connect
+                  customers with fresh farm produce while providing dedicated
+                  management areas for tenants and platform administrators.
+                </p>
+
+
+                <!-- FEATURES -->
+                <div class="mt-5 space-y-2 text-sm text-slate-600">
+
+                  <div class="project-feature">
+                    <i class="fas fa-check-circle text-emerald-500"></i>
+
+                    <span>
+                      Public marketplace for browsing and ordering farm produce
+                    </span>
+                  </div>
+
+
+                  <div class="project-feature">
+                    <i class="fas fa-check-circle text-emerald-500"></i>
+
+                    <span>
+                      Tenant dashboard for managing products and inventory
+                    </span>
+                  </div>
+
+
+                  <div class="project-feature">
+                    <i class="fas fa-check-circle text-emerald-500"></i>
+
+                    <span>
+                      Super Admin portal for platform management
+                    </span>
+                  </div>
+
+
+                  <div class="project-feature">
+                    <i class="fas fa-check-circle text-emerald-500"></i>
+
+                    <span>
+                      Customer ordering and order management
+                    </span>
+                  </div>
+
+
+                  <div class="project-feature">
+                    <i class="fas fa-check-circle text-emerald-500"></i>
+
+                    <span>
+                      Product availability and produce request management
+                    </span>
+                  </div>
+
+                </div>
+
+
+                <!-- WEBSITE LINK -->
+                <div class="mt-auto pt-7">
+
+                  <a
+                    href="YOUR-GREENHAVEN-WEBSITE-URL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-button"
+                  >
+                    <i class="fas fa-external-link-alt"></i>
+                    Visit Website
+                  </a>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+          <!-- =====================================================
+               NUBIA EMR
+          ====================================================== -->
+          <article class="project-card">
+
+            <div
+              class="relative flex h-60 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-blue-950 via-blue-900 to-cyan-700"
+            >
+
+              <div
+                class="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-cyan-300/20 blur-3xl"
+              ></div>
+
+              <div
+                class="absolute -bottom-20 -left-10 h-52 w-52 rounded-full bg-blue-400/20 blur-3xl"
+              ></div>
+
+
+              <div
+                class="relative flex h-28 w-28 items-center justify-center rounded-3xl border border-white/10 bg-white/10 text-5xl text-cyan-300 shadow-2xl backdrop-blur"
+              >
+                <i class="fas fa-notes-medical"></i>
+              </div>
+
+
+              <div
+                class="absolute left-4 top-4 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white shadow-lg"
+              >
+                Professional Project
+              </div>
+
+            </div>
+
+
+            <div class="flex flex-1 flex-col px-3 pb-4 pt-6">
+
+              <div class="flex items-center justify-between gap-4">
+
+                <h3 class="text-2xl font-bold text-slate-950">
+                  NubiaEMR
+                </h3>
+
+                <div
+                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-600"
+                >
+                  <i class="fas fa-heartbeat"></i>
+                </div>
+
+              </div>
+
+
+              <p class="mt-3 leading-7 text-slate-600">
+                An electronic medical records system for healthcare
+                providers including hospitals, clinics and laboratories.
+                I contributed to work around backend systems and data
+                management supporting the platform.
+              </p>
+
+
+              <div class="mt-5 space-y-2 text-sm text-slate-600">
+
+                <div class="project-feature">
+                  <i class="fas fa-check-circle text-blue-500"></i>
+                  <span>Electronic medical record management</span>
+                </div>
+
+                <div class="project-feature">
+                  <i class="fas fa-check-circle text-blue-500"></i>
+                  <span>Patient documentation and reporting</span>
+                </div>
+
+                <div class="project-feature">
+                  <i class="fas fa-check-circle text-blue-500"></i>
+                  <span>Healthcare data management</span>
+                </div>
+
+                <div class="project-feature">
+                  <i class="fas fa-check-circle text-blue-500"></i>
+                  <span>Secure healthcare communication</span>
+                </div>
+
+              </div>
+
+
+              <div class="mt-6 flex flex-wrap gap-2">
+
+                <span class="tech-badge">Healthcare</span>
+                <span class="tech-badge">Backend Systems</span>
+                <span class="tech-badge">Database</span>
+                <span class="tech-badge">API</span>
+
+              </div>
+
+
+              <div class="mt-auto pt-7">
+
+                <a
+                  href="https://nubiaemr.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-button"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Website
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- =====================================================
+               DUVAISHIP
+          ====================================================== -->
+          <article class="project-card">
+
+            <div
+              class="relative flex h-60 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-violet-950 via-indigo-900 to-blue-700"
+            >
+
+              <div
+                class="absolute -right-16 -top-16 h-52 w-52 rounded-full bg-violet-300/20 blur-3xl"
+              ></div>
+
+              <div
+                class="absolute -bottom-20 -left-10 h-52 w-52 rounded-full bg-blue-400/20 blur-3xl"
+              ></div>
+
+
+              <div
+                class="relative flex h-28 w-28 items-center justify-center rounded-3xl border border-white/10 bg-white/10 text-5xl text-violet-200 shadow-2xl backdrop-blur"
+              >
+                <i class="fas fa-shipping-fast"></i>
+              </div>
+
+
+              <div
+                class="absolute left-4 top-4 rounded-full bg-violet-500 px-4 py-2 text-xs font-bold text-white shadow-lg"
+              >
+                Professional Project
+              </div>
+
+            </div>
+
+
+            <div class="flex flex-1 flex-col px-3 pb-4 pt-6">
+
+              <div class="flex items-center justify-between gap-4">
+
+                <h3 class="text-2xl font-bold text-slate-950">
+                  Duvaiship
+                </h3>
+
+                <div
+                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-violet-50 text-violet-600"
+                >
+                  <i class="fas fa-box"></i>
+                </div>
+
+              </div>
+
+
+              <p class="mt-3 leading-7 text-slate-600">
+                A shipping and delivery web application where shippers
+                request deliveries and contractors can accept nearby
+                requests, handle package pickup and complete deliveries.
+              </p>
+
+
+              <div class="mt-5 space-y-2 text-sm text-slate-600">
+
+                <div class="project-feature">
+                  <i class="fas fa-check-circle text-violet-500"></i>
+                  <span>Shipper and contractor registration</span>
+                </div>
+
+                <div class="project-feature">
+                  <i class="fas fa-check-circle text-violet-500"></i>
+                  <span>Delivery request management</span>
+                </div>
+
+                <div class="project-feature">
+                  <i class="fas fa-check-circle text-violet-500"></i>
+                  <span>Nearby contractor matching</span>
+                </div>
+
+                <div class="project-feature">
+                  <i class="fas fa-check-circle text-violet-500"></i>
+                  <span>Shipment status tracking</span>
+                </div>
+
+              </div>
+
+
+              <div class="mt-6 flex flex-wrap gap-2">
+
+                <span class="tech-badge">Web Application</span>
+                <span class="tech-badge">Backend</span>
+                <span class="tech-badge">Database</span>
+                <span class="tech-badge">Delivery System</span>
+
+              </div>
+
+
+              <div class="mt-auto pt-7">
+
+                <a
+                  href="https://duvaiship.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-button"
+                >
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Website
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             INFRASTRUCTURE WORK
+        ====================================================== -->
+        <div
+          class="mt-10 overflow-hidden rounded-3xl bg-slate-950 p-7 text-white sm:p-9"
+        >
+
+          <div
+            class="grid items-center gap-8 lg:grid-cols-[0.7fr_1.3fr]"
+          >
+
+            <div>
+
+              <div
+                class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-400/10 text-2xl text-cyan-400"
+              >
+                <i class="fas fa-server"></i>
+              </div>
+
+
+              <p
+                class="mt-6 text-xs font-bold uppercase tracking-[0.18em] text-cyan-400"
+              >
+                Infrastructure Work
+              </p>
+
+
+              <h3 class="mt-3 text-3xl font-extrabold">
+                Server Deployment & Administration
+              </h3>
+
+
+              <p class="mt-4 leading-7 text-slate-400">
+                Practical experience supporting application deployment,
+                Linux servers and secure web infrastructure.
+              </p>
+
+            </div>
+
+
+            <div class="grid gap-4 sm:grid-cols-2">
+
+              <div class="infra-item">
+                <i class="fab fa-linux"></i>
+
+                <div>
+                  <p class="font-bold text-white">
+                    Linux / Ubuntu
+                  </p>
+
+                  <p class="mt-1 text-sm text-slate-400">
+                    Server setup and maintenance
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="infra-item">
+                <i class="fas fa-cloud"></i>
+
+                <div>
+                  <p class="font-bold text-white">
+                    Cloud Deployment
+                  </p>
+
+                  <p class="mt-1 text-sm text-slate-400">
+                    Application server deployment
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="infra-item">
+                <i class="fas fa-lock"></i>
+
+                <div>
+                  <p class="font-bold text-white">
+                    SSL / HTTPS
+                  </p>
+
+                  <p class="mt-1 text-sm text-slate-400">
+                    Certificate setup and renewal
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="infra-item">
+                <i class="fas fa-tools"></i>
+
+                <div>
+                  <p class="font-bold text-white">
+                    System Maintenance
+                  </p>
+
+                  <p class="mt-1 text-sm text-slate-400">
+                    Reliability and system support
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         SKILLS
+    ========================================================== -->
+    <section id="skills" class="py-24">
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+
+        <div class="text-center">
+
+          <p class="section-label">
+            Technical Skills
+          </p>
+
+
+          <h2
+            class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl"
+          >
+            Skills & Technologies
+          </h2>
+
+
+          <p
+            class="mx-auto mt-4 max-w-2xl leading-7 text-slate-600"
+          >
+            Technologies and systems I have worked with, alongside
+            areas I'm continuing to develop professionally.
+          </p>
+
+        </div>
+
+
+
+        <div class="mt-12 grid gap-6 md:grid-cols-2">
+
+
+          <!-- DATABASE -->
+          <div class="skill-category">
+
+            <div class="flex items-start gap-4">
+
+              <div
+                class="skill-category-icon bg-violet-50 text-violet-600"
+              >
+                <i class="fas fa-database"></i>
+              </div>
+
+              <div>
+
+                <h3 class="text-xl font-bold text-slate-950">
+                  Database Management
+                </h3>
+
+                <p class="mt-1 text-sm text-slate-500">
+                  Relational databases and data management
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 flex flex-wrap gap-2">
+
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">MySQL Workbench</span>
+              <span class="tech-badge">Oracle</span>
+              <span class="tech-badge">SQL Server</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Database Design</span>
+              <span class="tech-badge">Query Optimization</span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- BACKEND -->
+          <div class="skill-category">
+
+            <div class="flex items-start gap-4">
+
+              <div
+                class="skill-category-icon bg-blue-50 text-blue-600"
+              >
+                <i class="fas fa-code"></i>
+              </div>
+
+              <div>
+
+                <h3 class="text-xl font-bold text-slate-950">
+                  Backend Development
+                </h3>
+
+                <p class="mt-1 text-sm text-slate-500">
+                  APIs and data-driven applications
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 flex flex-wrap gap-2">
+
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">Laravel</span>
+              <span class="tech-badge">REST APIs</span>
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Git</span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- SYSTEM ADMINISTRATION -->
+          <div class="skill-category">
+
+            <div class="flex items-start gap-4">
+
+              <div
+                class="skill-category-icon bg-emerald-50 text-emerald-600"
+              >
+                <i class="fas fa-server"></i>
+              </div>
+
+              <div>
+
+                <h3 class="text-xl font-bold text-slate-950">
+                  Server & System Administration
+                </h3>
+
+                <p class="mt-1 text-sm text-slate-500">
+                  Operating systems and administration
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 flex flex-wrap gap-2">
+
+              <span class="tech-badge">Linux / Ubuntu</span>
+              <span class="tech-badge">Windows</span>
+              <span class="tech-badge">Active Directory</span>
+              <span class="tech-badge">Microsoft 365</span>
+              <span class="tech-badge">Server Deployment</span>
+              <span class="tech-badge">SSL / HTTPS</span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- SECURITY -->
+          <div class="skill-category">
+
+            <div class="flex items-start gap-4">
+
+              <div
+                class="skill-category-icon bg-cyan-50 text-cyan-600"
+              >
+                <i class="fas fa-shield-alt"></i>
+              </div>
+
+              <div>
+
+                <h3 class="text-xl font-bold text-slate-950">
+                  IT Support & Security
+                </h3>
+
+                <p class="mt-1 text-sm text-slate-500">
+                  Support, access and secure systems
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 flex flex-wrap gap-2">
+
+              <span class="tech-badge">Troubleshooting</span>
+              <span class="tech-badge">Access Control</span>
+              <span class="tech-badge">Data Privacy</span>
+              <span class="tech-badge">SSL</span>
+              <span class="tech-badge">System Support</span>
+
+            </div>
+
+
+            <div
+              class="mt-5 rounded-2xl border border-dashed border-cyan-200 bg-cyan-50/50 p-4"
+            >
+
+              <p class="text-sm leading-6 text-slate-600">
+                Information security is an area I'm actively developing
+                as I expand my experience with servers, databases and
+                secure infrastructure.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         EXPERIENCE
+    ========================================================== -->
+    <section
+      id="experience"
+      class="border-y border-slate-200 bg-white py-24"
+    >
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+
+        <div class="max-w-3xl">
+
+          <p class="section-label">
+            Professional Journey
+          </p>
+
+          <h2
+            class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl"
+          >
+            Experience
+          </h2>
+
+          <p class="mt-4 leading-7 text-slate-600">
+            My experience spans backend development, database systems,
+            server support and general IT operations.
+          </p>
+
+        </div>
+
+
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-2">
+
+
+          <!-- TOLDO CURRENT -->
+          <article class="experience-card">
+
+            <div class="flex items-start justify-between gap-5">
+
+              <div>
+
+                <span class="experience-date">
+                  Oct 2024 — Present
+                </span>
+
+                <h3 class="mt-3 text-xl font-bold text-slate-950">
+                  Database System Support / Backend Developer
+                </h3>
+
+                <p class="mt-1 font-semibold text-blue-600">
+                  ToldoIT
+                </p>
+
+              </div>
+
+
+              <div
+                class="experience-icon bg-blue-50 text-blue-600"
+              >
+                <i class="fas fa-database"></i>
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 space-y-3 text-sm leading-6 text-slate-600">
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Manage and support MySQL databases used for medical
+                  record processing.
+                </span>
+              </div>
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Design and maintain APIs and backend systems.
+                </span>
+              </div>
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Improve database queries and support performance
+                  troubleshooting.
+                </span>
+              </div>
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Support server configuration, deployment and SSL tasks.
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 flex flex-wrap gap-2">
+
+              <span class="tech-badge">MySQL</span>
+              <span class="tech-badge">Laravel</span>
+              <span class="tech-badge">PHP</span>
+              <span class="tech-badge">REST API</span>
+              <span class="tech-badge">Linux</span>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- NATIONAL SERVICE -->
+          <article class="experience-card">
+
+            <div class="flex items-start justify-between gap-5">
+
+              <div>
+
+                <span class="experience-date">
+                  Oct 2023 — Sep 2024
+                </span>
+
+                <h3 class="mt-3 text-xl font-bold text-slate-950">
+                  National Service Personnel
+                </h3>
+
+                <p class="mt-1 font-semibold text-violet-600">
+                  ToldoIT
+                </p>
+
+              </div>
+
+
+              <div
+                class="experience-icon bg-violet-50 text-violet-600"
+              >
+                <i class="fas fa-server"></i>
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 space-y-3 text-sm leading-6 text-slate-600">
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Assisted with server deployment and system maintenance.
+                </span>
+              </div>
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Helped improve database performance and system stability.
+                </span>
+              </div>
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Supported daily IT operations with the technical team.
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ABSA -->
+          <article class="experience-card">
+
+            <div class="flex items-start justify-between gap-5">
+
+              <div>
+
+                <span class="experience-date">
+                  Jun 2024 — Aug 2024
+                </span>
+
+                <h3 class="mt-3 text-xl font-bold text-slate-950">
+                  IT Intern
+                </h3>
+
+                <p class="mt-1 font-semibold text-rose-600">
+                  Absa Bank Ghana Limited
+                </p>
+
+              </div>
+
+
+              <div
+                class="experience-icon bg-rose-50 text-rose-600"
+              >
+                <i class="fas fa-building"></i>
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 space-y-3 text-sm leading-6 text-slate-600">
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Supported system maintenance and troubleshooting.
+                </span>
+              </div>
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Helped resolve basic hardware, software and network
+                  issues.
+                </span>
+              </div>
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Assisted with testing and documentation of internal
+                  systems.
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- SWISS FM -->
+          <article class="experience-card">
+
+            <div class="flex items-start justify-between gap-5">
+
+              <div>
+
+                <span class="experience-date">
+                  Jun 2022 — Aug 2022
+                </span>
+
+                <h3 class="mt-3 text-xl font-bold text-slate-950">
+                  IT Intern
+                </h3>
+
+                <p class="mt-1 font-semibold text-cyan-600">
+                  Swiss FM
+                </p>
+
+              </div>
+
+
+              <div
+                class="experience-icon bg-cyan-50 text-cyan-600"
+              >
+                <i class="fas fa-tools"></i>
+              </div>
+
+            </div>
+
+
+            <div class="mt-6 space-y-3 text-sm leading-6 text-slate-600">
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Helped manage website updates and provided basic IT
+                  support.
+                </span>
+              </div>
+
+              <div class="project-feature">
+                <i class="fas fa-check-circle text-emerald-500"></i>
+                <span>
+                  Assisted with maintaining and troubleshooting IT and
+                  broadcasting equipment.
+                </span>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         ACHIEVEMENTS
+    ========================================================== -->
+    <section class="py-24">
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+
+        <div class="text-center">
+
+          <p class="section-label">
+            Practical Impact
+          </p>
+
+          <h2
+            class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl"
+          >
+            Key Achievements
+          </h2>
+
+        </div>
+
+
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+
+          <div class="achievement-card">
+
+            <div
+              class="achievement-icon bg-violet-50 text-violet-600"
+            >
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+
+            <h3 class="mt-5 font-bold text-slate-950">
+              Query Optimization
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Improved database performance by optimizing SQL queries.
+            </p>
+
+          </div>
+
+
+          <div class="achievement-card">
+
+            <div
+              class="achievement-icon bg-blue-50 text-blue-600"
+            >
+              <i class="fas fa-project-diagram"></i>
+            </div>
+
+            <h3 class="mt-5 font-bold text-slate-950">
+              Database Structure
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Contributed to database structures for application systems.
+            </p>
+
+          </div>
+
+
+          <div class="achievement-card">
+
+            <div
+              class="achievement-icon bg-emerald-50 text-emerald-600"
+            >
+              <i class="fas fa-notes-medical"></i>
+            </div>
+
+            <h3 class="mt-5 font-bold text-slate-950">
+              Healthcare Systems
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Contributed to a medical records system used by healthcare
+              facilities.
+            </p>
+
+          </div>
+
+
+          <div class="achievement-card">
+
+            <div
+              class="achievement-icon bg-cyan-50 text-cyan-600"
+            >
+              <i class="fas fa-lock"></i>
+            </div>
+
+            <h3 class="mt-5 font-bold text-slate-950">
+              Secure Infrastructure
+            </h3>
+
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Supported SSL certificate renewal and server maintenance.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         EDUCATION
+    ========================================================== -->
+    <section
+      class="border-y border-slate-200 bg-white py-24"
+    >
+
+      <div class="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+
+
+        <div class="text-center">
+
+          <p class="section-label">
+            Academic Background
+          </p>
+
+          <h2
+            class="text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl"
+          >
+            Education
+          </h2>
+
+        </div>
+
+
+
+        <div
+          class="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-2"
+        >
+
+
+          <!-- BSC -->
+          <div class="education-card">
+
+            <div class="flex gap-4">
+
+              <div
+                class="education-icon bg-blue-50 text-blue-600"
+              >
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+
+
+              <div>
+
+                <p class="text-sm font-bold text-blue-600">
+                  2024 — 2025
+                </p>
+
+                <h3 class="mt-2 text-xl font-bold text-slate-950">
+                  Bachelor of Science in Information Technology
+                </h3>
+
+                <p class="mt-2 leading-6 text-slate-600">
+                  Ghana Communication Technology University
+                </p>
+
+                <p class="mt-1 text-sm text-slate-500">
+                  Accra, Ghana
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- HND -->
+          <div class="education-card">
+
+            <div class="flex gap-4">
+
+              <div
+                class="education-icon bg-violet-50 text-violet-600"
+              >
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+
+
+              <div>
+
+                <p class="text-sm font-bold text-violet-600">
+                  2021 — 2023
+                </p>
+
+                <h3 class="mt-2 text-xl font-bold text-slate-950">
+                  HND in Information & Communication Technology
+                </h3>
+
+                <p class="mt-2 leading-6 text-slate-600">
+                  Ho Technical University
+                </p>
+
+                <p class="mt-1 text-sm text-slate-500">
+                  Ho, Ghana
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
+    <section
+      id="contact"
+      class="mx-auto max-w-[1500px] overflow-hidden rounded-t-[3rem] bg-slate-950 text-white"
+    >
+
+      <div
+        class="mx-auto grid max-w-7xl gap-14 px-5 py-20 sm:px-6 lg:grid-cols-2 lg:px-8"
+      >
+
+        <!-- Contact Content -->
+        <div>
+
+          <p
+            class="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-emerald-400"
+          >
+            Get In Touch
+          </p>
+
+
+          <h2
+            class="max-w-xl text-4xl font-extrabold leading-tight sm:text-5xl"
+          >
+            Let's Build Something Great
+
+            <span
+              class="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent"
+            >
+              Together
+            </span>
+          </h2>
+
+
+          <p
+            class="mt-6 max-w-xl text-lg leading-8 text-slate-400"
+          >
+            I'm open to opportunities where I can contribute my backend
+            and database experience while continuing to grow in database
+            administration, server administration and information security.
+          </p>
+
+
+          <div class="mt-9 space-y-4">
+
+            <a
+              href="mailto:ayivorm@gmail.com"
+              class="flex items-center gap-3 text-slate-300 transition hover:text-white"
+            >
+              <i class="fas fa-envelope text-emerald-400"></i>
+              ayivorm@gmail.com
+            </a>
+
+
+            <a
+              href="https://linkedin.com/in/marymagdaleneayivor"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 text-slate-300 transition hover:text-white"
+            >
+              <i class="fab fa-linkedin-in text-emerald-400"></i>
+              LinkedIn
+            </a>
+
+
+            <div class="flex items-center gap-3 text-slate-300">
+
+              <i class="fas fa-map-marker-alt text-emerald-400"></i>
+
+              Greater Accra, Ghana
+
+            </div>
+
+
+            <div class="flex items-center gap-3 text-slate-300">
+
+              <span class="relative flex h-2.5 w-2.5">
+
+                <span
+                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+                ></span>
+
+                <span
+                  class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400"
+                ></span>
+
+              </span>
+
+              Available for opportunities
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- Contact Form -->
+        <div>
+
+         <form
+          id="contact-form"
+          action="https://formspree.io/f/mnpnqnng"
+          method="POST"
+        >
+
+            <!-- Formspree email subject -->
+            <input
+              type="hidden"
+              name="_subject"
+              id="form-email-subject"
+              value="New Portfolio Contact Message"
+            >
+
+
+            <div class="grid gap-4 sm:grid-cols-2">
+
+              <div>
+
+                <label
+                  for="name"
+                  class="mb-2 block text-sm font-medium text-slate-300"
+                >
+                  Your Name
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                  placeholder="Enter your name"
+                  class="contact-input"
+                >
+
+              </div>
+
+
+              <div>
+
+                <label
+                  for="email"
+                  class="mb-2 block text-sm font-medium text-slate-300"
+                >
+                  Email Address
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  placeholder="Enter your email"
+                  class="contact-input"
+                >
+
+              </div>
+
+            </div>
+
+
+
+            <!-- Subject -->
+            <div class="mt-4">
+
+              <label
+                for="subject"
+                class="mb-2 block text-sm font-medium text-slate-300"
+              >
+                Subject
+              </label>
+
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                required
+                maxlength="100"
+                autocomplete="off"
+                placeholder="What would you like to discuss?"
+                class="contact-input"
+              >
+
+            </div>
+
+
+
+            <div class="mt-4">
+
+              <label
+                for="message"
+                class="mb-2 block text-sm font-medium text-slate-300"
+              >
+                Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Tell me about your project or opportunity..."
+                class="contact-input resize-none"
+              ></textarea>
+
+            </div>
+
+
+
+            <button
+              id="submit-btn"
+              type="submit"
+              class="mt-5 inline-flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-violet-500 via-blue-500 to-cyan-400 px-6 py-4 font-bold text-white shadow-lg shadow-blue-950/20 transition hover:-translate-y-0.5 hover:shadow-xl"
+            >
+              <span id="submit-text">Send Message</span>
+              <i id="submit-icon" class="fas fa-paper-plane"></i>
+            </button>
+
+
+            <p
+              id="form-message"
+              class="mt-4 hidden rounded-xl border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-sm text-amber-300"
+            ></p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =======================================================
+           FOOTER
+      ======================================================== -->
+      <footer class="border-t border-white/10">
+
+        <div
+          class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 py-7 sm:px-6 md:flex-row lg:px-8"
+        >
+
+          <a href="#home" class="flex items-center gap-3">
+
+            <div
+              class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-400 font-extrabold text-slate-950"
+            >
+              MA
+            </div>
+
+            <span class="font-bold">
+              Mary Ayivor
+            </span>
+
+          </a>
+
+
+          <div
+            class="flex flex-wrap justify-center gap-5 text-sm text-slate-400"
+          >
+
+            <a href="#home" class="transition hover:text-white">
+              Home
+            </a>
+
+            <a href="#about" class="transition hover:text-white">
+              About
+            </a>
+
+            <a href="#projects" class="transition hover:text-white">
+              Projects
+            </a>
+
+            <a href="#skills" class="transition hover:text-white">
+              Skills
+            </a>
+
+            <a href="#experience" class="transition hover:text-white">
+              Experience
+            </a>
+
+            <a href="#contact" class="transition hover:text-white">
+              Contact
+            </a>
+
+          </div>
+
+
+          <p class="text-sm text-slate-500">
+            © <span id="year"></span> Mary Ayivor.
+          </p>
+
+        </div>
+
+      </footer>
+
+    </section>
+
   </main>
 
-  <div class="controlls">
-   <div class="control control-1 active-btn" data-id="home">
-    <i class="fas fa-home"></i>
-   </div>
-   <div class="control control-2" data-id="about">
-    <i class="fas fa-user"></i>
-   </div>
-   <div class="control control-3" data-id="portfolio">
-    <i class="fas fa-briefcase"></i>
-   </div>
-   <div class="control control-4" data-id="blogs">
-    <i class="fas fa-newspaper"></i>
-   </div>
-   <div class="control control-5" data-id="contact">
-    <i class="fas fa-envelope-open"></i>
-   </div>
-  </div> 
 
-  <div class="theme-btn">
-    <i class="fas fa-adjust"></i>
-  </div>
-    <script src="app.js"></script>
+  <script src="./app.js"></script>
+
 </body>
-</html>   
+
+</html>
