@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -14,7 +14,92 @@
     content="Mary Magdalene Ayivor — Backend Developer with experience in database systems, backend development, system support and server administration."
   >
 
-  <title>Mary Ayivor | Backend & Database Systems</title>
+ <title>Mary Ayivor | Backend & Database Systems</title>
+
+  <!-- Favicon -->
+<link
+  rel="icon"
+  type="image/jpeg"
+  href="./img/marybrown.jpg"
+>
+
+  <!-- SEO -->
+  <meta
+    name="author"
+    content="Mary Magdalene Ayivor"
+  >
+
+  <meta
+    name="keywords"
+    content="Mary Magdalene Ayivor, Backend Developer, Laravel Developer, PHP Developer, Database Systems, MySQL, Server Administration, Ghana"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <link
+    rel="canonical"
+    href="https://marya-23.github.io/"
+  >
+
+  <!-- Open Graph / LinkedIn / WhatsApp -->
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content="Mary Ayivor | Backend & Database Systems"
+  >
+
+  <meta
+    property="og:description"
+    content="Backend developer with experience in database systems, APIs, system support and server administration."
+  >
+
+  <meta
+    property="og:url"
+    content="https://marya-23.github.io/"
+  >
+
+  <meta
+    property="og:image"
+    content="https://marya-23.github.io/img/marybrown.jpg"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="Mary Magdalene Ayivor"
+  >
+
+  <!-- Twitter / X -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Mary Ayivor | Backend & Database Systems"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Backend developer with experience in database systems, APIs, system support and server administration."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://marya-23.github.io/img/marybrown.jpg"
+  >
+
+  <meta
+    name="theme-color"
+    content="#0f172a"
+  >
 
   <!-- Tailwind CSS -->
   <link rel="stylesheet" href="./src/output.css">
@@ -36,7 +121,7 @@
 </head>
 
 
-<body class="bg-[#f8faff] font-sans text-slate-900 antialiased">
+<body class="site-body bg-[#f8faff] font-sans text-slate-900 antialiased">
 
 
   <!-- =========================================================
@@ -121,6 +206,13 @@
       </div>
 
 
+      <!-- Theme Selector -->
+      <div class="theme-switcher hidden items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-sm md:flex" aria-label="Choose website theme">
+        <button type="button" class="theme-button active" data-theme-option="light" aria-label="Light theme" title="Light theme"><i class="fas fa-sun"></i></button>
+        <button type="button" class="theme-button" data-theme-option="dark" aria-label="Dark theme" title="Dark theme"><i class="fas fa-moon"></i></button>
+        <button type="button" class="theme-button" data-theme-option="colorful" aria-label="Colorful theme" title="Colorful theme"><i class="fas fa-palette"></i></button>
+      </div>
+
       <!-- Download CV -->
       <a
         href="cv/marymagdaleneayivor C.V.pdf"
@@ -177,6 +269,12 @@
         <a href="#contact" class="mobile-link font-medium">
           Contact
         </a>
+
+        <div class="theme-switcher flex w-fit items-center gap-1 rounded-full border border-slate-200 bg-white p-1 shadow-sm md:hidden" aria-label="Choose website theme">
+          <button type="button" class="theme-button active" data-theme-option="light" aria-label="Light theme" title="Light theme"><i class="fas fa-sun"></i></button>
+          <button type="button" class="theme-button" data-theme-option="dark" aria-label="Dark theme" title="Dark theme"><i class="fas fa-moon"></i></button>
+          <button type="button" class="theme-button" data-theme-option="colorful" aria-label="Colorful theme" title="Colorful theme"><i class="fas fa-palette"></i></button>
+        </div>
 
         <a
           href="cv/Mary-Magdalene-Ayivor-CV.pdf"
@@ -318,7 +416,7 @@
 
 
             <a
-              href="https://linkedin.com/in/marymagdaleneayivor"
+              href="https://www.linkedin.com/in/marymagdaleneayivor/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
-
 @theme {
   --font-sans: "Inter", sans-serif;
 }
-
 
 /* =========================================================
    GENERAL
@@ -16,6 +14,9 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
 }
 
 ::selection {
@@ -23,6 +24,49 @@ body {
   color: white;
 }
 
+/* =========================================================
+   THEME SWITCHER
+========================================================= */
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.theme-button {
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  border: 0;
+  border-radius: 9999px;
+  padding: 0.55rem 0.75rem;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.theme-button:hover {
+  transform: translateY(-2px);
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.theme-button.active,
+.theme-button.theme-active {
+  background: #0f172a;
+  color: white;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
 
 /* =========================================================
    SECTION LABEL
@@ -37,7 +81,6 @@ body {
   color: #10b981;
 }
 
-
 /* =========================================================
    SOCIAL BUTTONS
 ========================================================= */
@@ -51,11 +94,9 @@ body {
   border-radius: 9999px;
   background: white;
   color: #334155;
-
   box-shadow:
     0 1px 2px rgba(15, 23, 42, 0.05),
     0 0 0 1px #e2e8f0;
-
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -66,7 +107,6 @@ body {
   transform: translateY(-4px);
   color: white;
 }
-
 
 /* =========================================================
    HERO FEATURE BAR
@@ -91,9 +131,7 @@ body {
   font-size: 1.25rem;
 }
 
-
 @media (min-width: 640px) {
-
   .feature-item {
     border-right: 1px solid #f1f5f9;
   }
@@ -101,12 +139,9 @@ body {
   .feature-item:nth-child(2) {
     border-right: 0;
   }
-
 }
 
-
 @media (min-width: 1024px) {
-
   .feature-item {
     border-bottom: 0;
   }
@@ -118,9 +153,7 @@ body {
   .feature-item:last-child {
     border-right: 0;
   }
-
 }
-
 
 /* =========================================================
    ABOUT
@@ -131,24 +164,19 @@ body {
   border-radius: 1rem;
   background: white;
   padding: 1.5rem;
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.04);
-
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    background-color 0.35s ease;
 }
 
 .about-card:hover {
   transform: translateY(-5px);
   border-color: #cbd5e1;
-
-  box-shadow:
-    0 15px 30px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
 }
-
 
 /* =========================================================
    PROJECTS
@@ -159,30 +187,23 @@ body {
   height: 100%;
   flex-direction: column;
   overflow: hidden;
-
   border: 1px solid #e2e8f0;
   border-radius: 1.5rem;
-
   background: white;
   padding: 0.75rem;
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.04);
-
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    background-color 0.35s ease;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
   border-color: #cbd5e1;
-
-  box-shadow:
-    0 25px 50px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1);
 }
-
 
 .project-feature {
   display: flex;
@@ -195,23 +216,17 @@ body {
   flex-shrink: 0;
 }
 
-
 .project-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
   border-radius: 0.75rem;
-
   background: #020617;
-
   padding: 0.75rem 1.25rem;
-
   font-size: 0.875rem;
   font-weight: 700;
   color: white;
-
   transition:
     transform 0.2s ease,
     background 0.2s ease;
@@ -222,7 +237,6 @@ body {
   background: #2563eb;
 }
 
-
 /* =========================================================
    TECHNOLOGY BADGES
 ========================================================= */
@@ -230,22 +244,14 @@ body {
 .tech-badge {
   display: inline-flex;
   align-items: center;
-
   border: 1px solid #e2e8f0;
   border-radius: 9999px;
-
   background: #ffffff;
-
   padding: 0.55rem 0.85rem;
-
   font-size: 0.75rem;
   font-weight: 700;
-
   color: #334155;
-
-  box-shadow:
-    0 2px 8px rgba(15, 23, 42, 0.04);
-
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   transition:
     transform 0.2s ease,
     border-color 0.2s ease,
@@ -260,7 +266,6 @@ body {
   color: #2563eb;
 }
 
-
 /* =========================================================
    INFRASTRUCTURE
 ========================================================= */
@@ -269,15 +274,10 @@ body {
   display: flex;
   align-items: center;
   gap: 1rem;
-
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   border-radius: 1rem;
-
   background: rgba(255, 255, 255, 0.05);
-
   padding: 1.25rem;
-
   transition:
     transform 0.25s ease,
     background 0.25s ease,
@@ -293,13 +293,10 @@ body {
 .infra-item > i {
   width: 2rem;
   flex-shrink: 0;
-
   font-size: 1.5rem;
   text-align: center;
-
   color: #22d3ee;
 }
-
 
 /* =========================================================
    SKILL CATEGORIES
@@ -308,45 +305,32 @@ body {
 .skill-category {
   border: 1px solid #e2e8f0;
   border-radius: 1.5rem;
-
   background: white;
-
   padding: 1.75rem;
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.04);
-
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    background-color 0.35s ease;
 }
 
 .skill-category:hover {
   transform: translateY(-5px);
   border-color: #cbd5e1;
-
-  box-shadow:
-    0 20px 40px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
-
 
 .skill-category-icon {
   display: flex;
-
   height: 3rem;
   width: 3rem;
-
   flex-shrink: 0;
-
   align-items: center;
   justify-content: center;
-
   border-radius: 0.75rem;
-
   font-size: 1.25rem;
 }
-
 
 /* =========================================================
    EXPERIENCE
@@ -355,61 +339,42 @@ body {
 .experience-card {
   border: 1px solid #e2e8f0;
   border-radius: 1.5rem;
-
   background: white;
-
   padding: 1.75rem;
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.04);
-
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    background-color 0.35s ease;
 }
 
 .experience-card:hover {
   transform: translateY(-5px);
   border-color: #cbd5e1;
-
-  box-shadow:
-    0 20px 40px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
 }
-
 
 .experience-date {
   display: inline-flex;
-
   border-radius: 9999px;
-
   background: #eff6ff;
-
   padding: 0.4rem 0.75rem;
-
   font-size: 0.75rem;
   font-weight: 700;
-
   color: #2563eb;
 }
 
-
 .experience-icon {
   display: flex;
-
   height: 3rem;
   width: 3rem;
-
   flex-shrink: 0;
-
   align-items: center;
   justify-content: center;
-
   border-radius: 0.75rem;
-
   font-size: 1.15rem;
 }
-
 
 /* =========================================================
    ACHIEVEMENTS
@@ -418,43 +383,31 @@ body {
 .achievement-card {
   border: 1px solid #e2e8f0;
   border-radius: 1.25rem;
-
   background: white;
-
   padding: 1.5rem;
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.04);
-
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    background-color 0.35s ease;
 }
 
 .achievement-card:hover {
   transform: translateY(-5px);
   border-color: #cbd5e1;
-
-  box-shadow:
-    0 15px 30px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
 }
-
 
 .achievement-icon {
   display: flex;
-
   height: 3rem;
   width: 3rem;
-
   align-items: center;
   justify-content: center;
-
   border-radius: 0.75rem;
-
   font-size: 1.2rem;
 }
-
 
 /* =========================================================
    EDUCATION
@@ -463,45 +416,32 @@ body {
 .education-card {
   border: 1px solid #e2e8f0;
   border-radius: 1.25rem;
-
   background: white;
-
   padding: 1.75rem;
-
-  box-shadow:
-    0 4px 15px rgba(15, 23, 42, 0.04);
-
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    background-color 0.35s ease;
 }
 
 .education-card:hover {
   transform: translateY(-5px);
   border-color: #cbd5e1;
-
-  box-shadow:
-    0 15px 30px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
 }
-
 
 .education-icon {
   display: flex;
-
   height: 3rem;
   width: 3rem;
-
   flex-shrink: 0;
-
   align-items: center;
   justify-content: center;
-
   border-radius: 0.75rem;
-
   font-size: 1.1rem;
 }
-
 
 /* =========================================================
    CONTACT
@@ -509,19 +449,12 @@ body {
 
 .contact-input {
   width: 100%;
-
   border: 1px solid rgba(255, 255, 255, 0.1);
-
   border-radius: 0.75rem;
-
   background: rgba(255, 255, 255, 0.05);
-
   padding: 1rem 1.25rem;
-
   color: white;
-
   outline: none;
-
   transition:
     border-color 0.2s ease,
     background 0.2s ease,
@@ -534,20 +467,356 @@ body {
 
 .contact-input:focus {
   border-color: #60a5fa;
-
   background: rgba(255, 255, 255, 0.08);
-
-  box-shadow:
-    0 0 0 3px rgba(96, 165, 250, 0.08);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.08);
 }
 
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+html[data-theme="light"] body {
+  background: #f8faff;
+  color: #0f172a;
+}
+
+/* =========================================================
+   DARK THEME
+========================================================= */
+
+html[data-theme="dark"] body {
+  background: #070b14 !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] #navbar,
+html[data-theme="dark"] #mobile-menu {
+  background: rgba(15, 23, 42, 0.96) !important;
+  border-color: #263449 !important;
+}
+
+html[data-theme="dark"] section.bg-white,
+html[data-theme="dark"] section.bg-slate-50,
+html[data-theme="dark"] .bg-white {
+  background-color: #0f172a !important;
+}
+
+html[data-theme="dark"] .bg-slate-50,
+html[data-theme="dark"] .bg-slate-100 {
+  background-color: #111c31 !important;
+}
+
+html[data-theme="dark"] .project-card,
+html[data-theme="dark"] .about-card,
+html[data-theme="dark"] .skill-category,
+html[data-theme="dark"] .experience-card,
+html[data-theme="dark"] .achievement-card,
+html[data-theme="dark"] .education-card,
+html[data-theme="dark"] .tech-badge {
+  background: #0f172a !important;
+  border-color: #263449 !important;
+}
+
+html[data-theme="dark"] .text-slate-950,
+html[data-theme="dark"] .text-slate-900,
+html[data-theme="dark"] .text-slate-800,
+html[data-theme="dark"] .text-slate-700 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] .text-slate-600,
+html[data-theme="dark"] .text-slate-500,
+html[data-theme="dark"] .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+html[data-theme="dark"] .border-slate-100,
+html[data-theme="dark"] .border-slate-200,
+html[data-theme="dark"] .border-slate-300 {
+  border-color: #263449 !important;
+}
+
+html[data-theme="dark"] .social-button {
+  background: #111827;
+  color: #cbd5e1;
+  box-shadow: 0 0 0 1px #263449;
+}
+
+html[data-theme="dark"] .tech-badge {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .experience-date {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+html[data-theme="dark"] .theme-switcher {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+html[data-theme="dark"] .theme-button {
+  color: #94a3b8;
+}
+
+html[data-theme="dark"] .theme-button:hover {
+  background: #1e293b;
+  color: white;
+}
+
+html[data-theme="dark"] .theme-button.active,
+html[data-theme="dark"] .theme-button.theme-active {
+  background: white;
+  color: #0f172a;
+}
+
+/* =========================================================
+   COLORFUL THEME
+========================================================= */
+
+html[data-theme="colorful"] body {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(59, 130, 246, 0.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(236, 72, 153, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 50% 75%,
+      rgba(16, 185, 129, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(
+      135deg,
+      #eff6ff 0%,
+      #fff7ed 45%,
+      #faf5ff 100%
+    ) !important;
+
+  color: #241447 !important;
+}
+
+/* Navbar */
+
+html[data-theme="colorful"] #navbar {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(168, 85, 247, 0.18) !important;
+  backdrop-filter: blur(18px);
+}
+
+html[data-theme="colorful"] #mobile-menu {
+  background: rgba(255, 255, 255, 0.96) !important;
+}
+
+/* White sections */
+
+html[data-theme="colorful"] section.bg-white {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(250, 245, 255, 0.72)
+    ) !important;
+}
+
+/* Light gray sections */
+
+html[data-theme="colorful"] section.bg-slate-50 {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239, 246, 255, 0.75),
+      rgba(253, 242, 248, 0.72)
+    ) !important;
+}
+
+/* Cards */
+
+html[data-theme="colorful"] .project-card,
+html[data-theme="colorful"] .about-card,
+html[data-theme="colorful"] .skill-category,
+html[data-theme="colorful"] .experience-card,
+html[data-theme="colorful"] .achievement-card,
+html[data-theme="colorful"] .education-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(250, 245, 255, 0.9)
+    ) !important;
+
+  border-color: rgba(168, 85, 247, 0.2) !important;
+
+  box-shadow:
+    0 15px 35px rgba(124, 58, 237, 0.08),
+    0 4px 12px rgba(59, 130, 246, 0.05);
+
+  backdrop-filter: blur(14px);
+}
+
+html[data-theme="colorful"] .project-card:hover,
+html[data-theme="colorful"] .about-card:hover,
+html[data-theme="colorful"] .skill-category:hover,
+html[data-theme="colorful"] .experience-card:hover,
+html[data-theme="colorful"] .achievement-card:hover,
+html[data-theme="colorful"] .education-card:hover {
+  border-color: rgba(219, 39, 119, 0.35) !important;
+
+  box-shadow:
+    0 24px 50px rgba(124, 58, 237, 0.14),
+    0 8px 20px rgba(236, 72, 153, 0.08);
+}
+
+/* Main text */
+
+html[data-theme="colorful"] .text-slate-950,
+html[data-theme="colorful"] .text-slate-900,
+html[data-theme="colorful"] .text-slate-800,
+html[data-theme="colorful"] .text-slate-700 {
+  color: #241447 !important;
+}
+
+html[data-theme="colorful"] .text-slate-600,
+html[data-theme="colorful"] .text-slate-500 {
+  color: #6d5c86 !important;
+}
+
+/* Section labels */
+
+html[data-theme="colorful"] .section-label {
+  color: #db2777;
+}
+
+/* Technology badges */
+
+html[data-theme="colorful"] .tech-badge {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(245, 243, 255, 0.96)
+    );
+
+  border-color: #ddd6fe;
+  color: #6d28d9;
+}
+
+html[data-theme="colorful"] .tech-badge:hover {
+  border-color: #c026d3;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5f3ff,
+      #fdf2f8
+    );
+
+  color: #c026d3;
+}
+
+/* Social buttons */
+
+html[data-theme="colorful"] .social-button {
+  background: rgba(255, 255, 255, 0.92);
+  color: #7c3aed;
+
+  box-shadow:
+    0 5px 15px rgba(124, 58, 237, 0.08),
+    0 0 0 1px rgba(168, 85, 247, 0.2);
+}
+
+/* Experience dates */
+
+html[data-theme="colorful"] .experience-date {
+  background:
+    linear-gradient(
+      135deg,
+      #ede9fe,
+      #fce7f3
+    );
+
+  color: #7c3aed;
+}
+
+/* Project buttons */
+
+html[data-theme="colorful"] .project-button {
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #db2777
+    );
+
+  box-shadow:
+    0 8px 20px rgba(124, 58, 237, 0.2);
+}
+
+html[data-theme="colorful"] .project-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #6d28d9,
+      #be185d
+    );
+}
+
+/* Theme selector */
+
+html[data-theme="colorful"] .theme-switcher {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(168, 85, 247, 0.25) !important;
+
+  box-shadow:
+    0 6px 20px rgba(124, 58, 237, 0.08);
+
+  backdrop-filter: blur(12px);
+}
+
+html[data-theme="colorful"] .theme-button {
+  color: #7c3aed;
+}
+
+html[data-theme="colorful"] .theme-button:hover {
+  background: #f5f3ff;
+  color: #db2777;
+}
+
+html[data-theme="colorful"] .theme-button.active,
+html[data-theme="colorful"] .theme-button.theme-active {
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed,
+      #db2777
+    );
+
+  color: white;
+
+  box-shadow:
+    0 5px 15px rgba(124, 58, 237, 0.25);
+}
+
+/* Borders */
+
+html[data-theme="colorful"] .border-slate-100,
+html[data-theme="colorful"] .border-slate-200,
+html[data-theme="colorful"] .border-slate-300 {
+  border-color: rgba(168, 85, 247, 0.18) !important;
+}
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 639px) {
-
   .section-label {
     letter-spacing: 0.14em;
   }
@@ -558,4 +827,178 @@ body {
     border-radius: 1.25rem;
   }
 
+  .theme-button span {
+    display: none;
+  }
+
+  .theme-button {
+    width: 2.25rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+
+/* =========================================================
+   FINAL RESPONSIVE POLISH
+========================================================= */
+
+#navbar {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#mobile-menu {
+  max-height: calc(100vh - 78px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.nav-link,
+.mobile-link {
+  position: relative;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.55rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: #2563eb;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.nav-link.nav-active {
+  color: #2563eb !important;
+}
+
+.nav-link.nav-active::after {
+  transform: scaleX(1);
+}
+
+.mobile-link.nav-active {
+  color: #2563eb !important;
+  font-weight: 700;
+}
+
+/* Scroll reveal */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.65s ease var(--reveal-delay, 0ms),
+    transform 0.65s ease var(--reveal-delay, 0ms);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Keyboard accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.45);
+  outline-offset: 3px;
+}
+
+/* Dark theme active navigation */
+html[data-theme="dark"] .nav-link.nav-active,
+html[data-theme="dark"] .mobile-link.nav-active {
+  color: #60a5fa !important;
+}
+
+html[data-theme="dark"] .nav-link::after {
+  background: #60a5fa;
+}
+
+/* Colorful theme active navigation */
+html[data-theme="colorful"] .nav-link.nav-active,
+html[data-theme="colorful"] .mobile-link.nav-active {
+  color: #7c3aed !important;
+}
+
+html[data-theme="colorful"] .nav-link::after {
+  background: linear-gradient(90deg, #2563eb, #7c3aed, #db2777);
+}
+
+/* Tablet and phone refinements */
+@media (max-width: 1023px) {
+  #mobile-menu {
+    box-shadow: 0 16px 30px rgba(15, 23, 42, 0.08);
+  }
+}
+
+@media (max-width: 639px) {
+  html {
+    scroll-padding-top: 82px;
+  }
+
+  #home {
+    padding-top: 7rem;
+  }
+
+  #home h1 {
+    font-size: clamp(2.75rem, 13vw, 4rem);
+    line-height: 1.02;
+  }
+
+  #home .social-button {
+    height: 2.65rem;
+    width: 2.65rem;
+  }
+
+  .project-card {
+    padding: 0.625rem;
+  }
+
+  .about-card,
+  .skill-category,
+  .experience-card,
+  .achievement-card,
+  .education-card {
+    padding: 1.25rem;
+  }
+
+  .project-button {
+    width: 100%;
+  }
+
+  #contact {
+    border-radius: 2rem 2rem 0 0;
+  }
+}
+
+/* Respect reduced-motion accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+  }
 }
