@@ -943,6 +943,9 @@
   .px-7 {
     padding-inline: calc(var(--spacing) * 7);
   }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
@@ -1255,6 +1258,9 @@
     }
     .hover\:text-blue-600:hover {
       color: var(--color-blue-600);
+    }
+    .hover\:text-blue-700:hover {
+      color: var(--color-blue-700);
     }
     .hover\:text-white:hover {
       color: var(--color-white);
@@ -1940,6 +1946,51 @@ html[data-theme="colorful"] .nav-link::after {
     opacity: 1;
     transform: none;
   }
+}
+.achievement-card, .education-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.achievement-card:hover, .education-card:hover {
+  transform: translateY(-7px);
+  border-color: #93c5fd;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.10), 0 8px 20px rgba(59, 130, 246, 0.08);
+}
+html[data-theme="dark"] .achievement-card:hover, html[data-theme="dark"] .education-card:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.32), 0 0 25px rgba(59, 130, 246, 0.12);
+}
+html[data-theme="colorful"] .achievement-card:hover, html[data-theme="colorful"] .education-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(139, 92, 246, 0.55) !important;
+  box-shadow: 0 24px 50px rgba(124, 58, 237, 0.16), 0 10px 25px rgba(236, 72, 153, 0.10), 0 0 0 1px rgba(59, 130, 246, 0.08);
+}
+.project-card, .about-card, .skill-category, .experience-card, .achievement-card, .education-card, .feature-item, .infra-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+html[data-theme="light"] .project-card:hover, html[data-theme="light"] .about-card:hover, html[data-theme="light"] .skill-category:hover, html[data-theme="light"] .experience-card:hover, html[data-theme="light"] .achievement-card:hover, html[data-theme="light"] .education-card:hover, html[data-theme="light"] .feature-item:hover {
+  transform: translateY(-7px);
+  border-color: #93c5fd;
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.10), 0 8px 20px rgba(59, 130, 246, 0.08);
+}
+html[data-theme="dark"] .project-card:hover, html[data-theme="dark"] .about-card:hover, html[data-theme="dark"] .skill-category:hover, html[data-theme="dark"] .experience-card:hover, html[data-theme="dark"] .achievement-card:hover, html[data-theme="dark"] .education-card:hover, html[data-theme="dark"] .feature-item:hover {
+  transform: translateY(-7px);
+  border-color: #3b82f6 !important;
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.32), 0 0 25px rgba(59, 130, 246, 0.14);
+}
+html[data-theme="colorful"] .project-card:hover, html[data-theme="colorful"] .about-card:hover, html[data-theme="colorful"] .skill-category:hover, html[data-theme="colorful"] .experience-card:hover, html[data-theme="colorful"] .achievement-card:hover, html[data-theme="colorful"] .education-card:hover, html[data-theme="colorful"] .feature-item:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(139, 92, 246, 0.55) !important;
+  box-shadow: 0 24px 50px rgba(124, 58, 237, 0.16), 0 10px 25px rgba(236, 72, 153, 0.10), 0 0 0 1px rgba(59, 130, 246, 0.08);
+}
+.infra-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34, 211, 238, 0.40);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.20), 0 0 20px rgba(34, 211, 238, 0.08);
+}
+.tech-badge:hover {
+  transform: translateY(-3px);
 }
 @property --tw-space-y-reverse {
   syntax: "*";
