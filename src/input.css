@@ -1135,3 +1135,66 @@ html[data-theme="colorful"] .feature-item:hover {
 .tech-badge:hover {
   transform: translateY(-3px);
 }
+
+/* =========================================================
+   PROJECTS GRID LAYOUT FIX
+========================================================= */
+
+/* Keep every project card inside its grid column */
+#projects .project-card {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Desktop: three equal project cards */
+@media (min-width: 1024px) {
+  #projects .grid.lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  #projects .project-card {
+    height: 100%;
+  }
+
+  #projects .project-button {
+    width: fit-content;
+  }
+}
+
+/* Tablet: two columns */
+@media (min-width: 640px) and (max-width: 1023px) {
+  #projects .grid.lg\:grid-cols-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  /* Third project uses the full second row */
+  #projects .project-card:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  #projects .project-button {
+    width: fit-content;
+  }
+}
+
+/* Phone: one project per row */
+@media (max-width: 639px) {
+  #projects .grid.lg\:grid-cols-3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #projects .project-card {
+    width: 100%;
+  }
+
+  #projects .project-card:nth-child(3) {
+    grid-column: auto;
+  }
+
+  #projects .project-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
